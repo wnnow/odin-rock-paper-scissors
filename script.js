@@ -9,13 +9,23 @@ function getPlayerSelection() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  if (playerSelection === null)
-    return "You have to choose something or maybe you spell it wrong.";
+  if (playerSelection === null) return "You have to choose something.";
+
   let playerSelectionLowerCase = playerSelection.toLowerCase();
   let computerSelectionLowerCase = computerSelection.toLowerCase();
+
+  if (
+    playerSelectionLowerCase !== "rock" &&
+    playerSelectionLowerCase !== "paper" &&
+    playerSelectionLowerCase !== "scissors"
+  ) {
+    return "Maybe you spell it wrong.";
+  }
+
   let declarePlayerWinner = `You Win! ${playerSelection} beat ${computerSelection}`;
   let declareComputerWinner = `You Lose! ${computerSelection} beat ${playerSelection}`;
   let declareDraw = `Draw!`;
+
   if (
     playerSelectionLowerCase === "rock" &&
     computerSelectionLowerCase === "scissors"
@@ -49,4 +59,12 @@ function playRound(playerSelection, computerSelection) {
   } else {
     return declareDraw;
   }
+}
+
+function game() {
+  console.log(playRound(getPlayerSelection(), getComputerChoice()));
+  console.log(playRound(getPlayerSelection(), getComputerChoice()));
+  console.log(playRound(getPlayerSelection(), getComputerChoice()));
+  console.log(playRound(getPlayerSelection(), getComputerChoice()));
+  console.log(playRound(getPlayerSelection(), getComputerChoice()));
 }
