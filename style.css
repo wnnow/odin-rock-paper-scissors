@@ -14,7 +14,6 @@ body {
 }
 
 .container {
-  border: 1px solid red;
   width: 768px;
   margin: 0 auto;
   padding: 32px;
@@ -23,12 +22,10 @@ body {
 
 .name-container,
 .score-container {
-  border: 1px solid red;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 16px;
-  /* margin-top: 52px; */
 }
 
 .score-container {
