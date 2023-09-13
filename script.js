@@ -9,19 +9,8 @@ function getPlayerSelection() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  if (playerSelection === null) return "You have to choose something.";
-
   let playerSelectionLowerCase = playerSelection.toLowerCase();
   let computerSelectionLowerCase = computerSelection.toLowerCase();
-
-  if (
-    playerSelectionLowerCase !== "rock" &&
-    playerSelectionLowerCase !== "paper" &&
-    playerSelectionLowerCase !== "scissors"
-  ) {
-    return "Maybe you spell it wrong.";
-  }
-
   let declarePlayerWinner = `You Win! ${playerSelection} beat ${computerSelection}`;
   let declareComputerWinner = `You Lose! ${computerSelection} beat ${playerSelection}`;
   let declareDraw = `Draw!`;
@@ -61,10 +50,10 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function game() {
-  console.log(playRound(getPlayerSelection(), getComputerChoice()));
-  console.log(playRound(getPlayerSelection(), getComputerChoice()));
-  console.log(playRound(getPlayerSelection(), getComputerChoice()));
-  console.log(playRound(getPlayerSelection(), getComputerChoice()));
-  console.log(playRound(getPlayerSelection(), getComputerChoice()));
-}
+const rpsSelectBtns = document.querySelectorAll("#rpsSelectBtn");
+rpsSelectBtns.forEach((btn) =>
+  btn.addEventListener("click", (e) => {
+    console.log(e.target.textContent);
+    console.log(playRound(e.target.textContent, getComputerChoice()));
+  })
+);
