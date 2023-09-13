@@ -11,6 +11,7 @@ html {
 body {
   padding: 0;
   margin: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -37,4 +38,20 @@ body {
 .announce-message {
   height: 50px;
   padding: 16px;
+}
+
+button {
+  margin: 0;
+  background-color: #5d6467;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #e2e2e2;
+  color: #5d6467;
 }
