@@ -4,12 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Odin Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./style.css" />
     <script src="./script.js" defer></script>
   </head>
 
   <body>
-    <button id="rpsSelectBtn">Rock</button>
-    <button id="rpsSelectBtn">Paper</button>
-    <button id="rpsSelectBtn">Scissors</button>
+    <div class="container">
+      <h1>Rock Paper Scissors</h1>
+      <div class="name-container">
+        <div class="player-name">Player Score</div>
+        <!-- <div class="hyphen">-</div> -->
+        <div class="computer-name">Computer Score</div>
+      </div>
+      <div class="score-container">
+        <div class="player-score">0</div>
+        <!-- <div class="hyphen">-</div> -->
+        <div class="computer-score">0</div>
+      </div>
+      <div class="announce-message"></div>
+      <button id="rpsSelectBtn">Rock</button>
+      <button id="rpsSelectBtn">Paper</button>
+      <button id="rpsSelectBtn">Scissors</button>
+    </div>
   </body>
 </html>
