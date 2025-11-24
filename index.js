@@ -110,3 +110,5 @@ function getWinner() {
 function resetRound() {
   round = 0;
 }
+
+playGame();
