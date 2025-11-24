@@ -1,4 +1,4 @@
-# odin-rock-paper-scissors
+# Odin-rock-paper-scissors
 
 A minimal Rock–Paper–Scissors game implemented in plain JavaScript (no arrays, loops, or objects). The game runs in the browser console and uses an external JavaScript file linked to an otherwise empty HTML page.
 

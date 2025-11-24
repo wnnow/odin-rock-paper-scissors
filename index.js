@@ -30,9 +30,7 @@ function getHumanChoice() {
   return humanChoiceLowerCase;
 }
 
-function playRound() {
-  const computerChoice = getComputerChoice();
-  const humanChoice = getHumanChoice();
+function playRound(humanChoice, computerChoice) {
   console.log("You chose:", humanChoice);
   console.log("Computer chose:", computerChoice);
   if (humanChoice === "rock") {
@@ -84,11 +82,11 @@ function playGame() {
     console.log("Game Over Please Play Again");
     return;
   }
-  playRound();
-  playRound();
-  playRound();
-  playRound();
-  playRound();
+  playRound(getHumanChoice(), getComputerChoice());
+  playRound(getHumanChoice(), getComputerChoice());
+  playRound(getHumanChoice(), getComputerChoice());
+  playRound(getHumanChoice(), getComputerChoice());
+  playRound(getHumanChoice(), getComputerChoice());
   if (isGameOver()) {
     console.log(getWinner());
     return;
@@ -107,4 +105,8 @@ function getWinner() {
     return "You win!";
   }
   return "You lose!";
+}
+
+function resetRound() {
+  round = 0;
 }
