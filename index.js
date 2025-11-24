@@ -1,7 +1,8 @@
-let humanScore = 0;
-let computerScore = 0;
 let totalRound = 5;
 let round = 0;
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
   // random number 0-2 (total 3) each of number represent rock or paper or scissors
   let randomNum = Math.floor(Math.random() * 3);
@@ -39,11 +40,11 @@ function playRound() {
       console.log("Draw");
     }
     if (computerChoice === "paper") {
-      console.log("You lose this round!");
+      console.log("You lose! Paper beats rock");
       computerScore++;
     }
     if (computerChoice === "scissors") {
-      console.log("You win this round!");
+      console.log("You win! Rock beats scissors!");
       humanScore++;
     }
   }
@@ -52,11 +53,11 @@ function playRound() {
       console.log("Draw");
     }
     if (computerChoice === "scissors") {
-      console.log("You lose this round!");
+      console.log("You lose! Scissors beats Paper");
       computerScore++;
     }
     if (computerChoice === "rock") {
-      console.log("You win this round!");
+      console.log("You win! Paper beats Rock");
       humanScore++;
     }
   }
@@ -65,15 +66,45 @@ function playRound() {
       console.log("Draw");
     }
     if (computerChoice === "rock") {
-      console.log("You lose this round!");
+      console.log("You lose! Rock beats Scissors");
       computerScore++;
     }
     if (computerChoice === "paper") {
-      console.log("You win this round!");
+      console.log("You win! Scissors beats Paper");
       humanScore++;
     }
   }
-  console.log(`Round:${round}/${totalRound}`);
+  console.log(`Round:${++round}/${totalRound}`);
   console.log(`Your score: ${humanScore}`);
   console.log(`Computer score: ${computerScore}`);
+}
+
+function playGame() {
+  if (isGameOver()) {
+    console.log("Game Over Please Play Again");
+    return;
+  }
+  playRound();
+  playRound();
+  playRound();
+  playRound();
+  playRound();
+  if (isGameOver()) {
+    console.log(getWinner());
+    return;
+  }
+}
+
+function isGameOver() {
+  if (round === totalRound) {
+    return true;
+  }
+  return false;
+}
+
+function getWinner() {
+  if (humanScore > computerScore) {
+    return "You win!";
+  }
+  return "You lose!";
 }
